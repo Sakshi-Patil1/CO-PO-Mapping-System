@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated CO–PO & CO–PSO Mapping System | ADCET OBE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Header -->
+        <header class="app-header">
+            <div class="header-left">
+                <div class="college-badge">ADCET Autonomous • NBA OBE Framework</div>
+                <div class="header-titles">
+                    <h1>Automated CO–PO & CO–PSO Mapping System</h1>
+                    <p class="institution-sub">Sant Dnyaneshwar Shikshan Sanstha's Annasaheb Dange College of Engineering & Technology, Ashta</p>
+                    <p class="dept-sub" id="header-dept-name">Department of Artificial Intelligence and Data Science (AI & DS)</p>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    <span id="header-system-status">OBE Accreditation Engine</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Department & Course Selection Bar -->
+        <section class="dept-nav-card">
+            <div class="nav-controls-left">
+                <!-- Department Dropdown -->
+                <div class="nav-control-group">
+                    <label for="department-select" class="nav-label">Select Department:</label>
+                    <div class="select-with-btn">
+                        <select id="department-select" class="form-select nav-select" onchange="onDepartmentChange(this.value)">
+                            <option value="">Loading Departments...</option>
+                        </select>
+                        <button class="btn btn-outline-sm" type="button" onclick="openAddDepartmentModal()" title="Add New Department">
+                            <span>+</span> New Dept
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Course Dropdown -->
+                <div class="nav-control-group">
+                    <label for="course-select" class="nav-label">Select Course:</label>
+                    <div class="select-with-btn">
+                        <select id="course-select" class="form-select nav-select" onchange="onCourseChange(this.value)">
+                            <option value="">Loading Courses...</option>
+                        </select>
+                        <button class="btn btn-primary-sm" type="button" onclick="openAddCourseModal()" title="Add New Course to Selected Department">
+                            <span>+</span> Add Course
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-controls-right">
+                <button class="btn btn-outline" type="button" id="btn-toggle-catalog" onclick="toggleCourseCatalog()">
+                    <span class="btn-icon">📁</span> <span id="btn-toggle-catalog-text">Department Courses (1)</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Department Courses Catalog Section (Collapsible) -->
+        <section class="catalog-section" id="catalog-section" style="display: none;">
+            <div class="catalog-header">
+                <div>
+                    <h3 id="catalog-dept-title">Department Courses</h3>
+                    <p id="catalog-dept-sub">Select any course below to inspect its details and generate its CO–PO/PSO mapping.</p>
+                </div>
+                <button class="btn btn-primary-sm" onclick="openAddCourseModal()">+ Add New Course</button>
+            </div>
+            <div class="course-cards-grid" id="course-cards-grid">
+                <!-- Dynamically populated via app.js -->
+            </div>
+        </section>
+
+        <!-- Active Course Workspace -->
+        <div id="course-workspace">
+            <!-- Course Meta Card -->
+            <section class="course-meta-card">
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <span class="meta-label">Course Name</span>
+                        <span class="meta-val highlight" id="meta-course-name">Data Structures and Algorithms</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Course Code</span>
+                        <span class="meta-val badge-code" id="meta-course-code">2ADPC 202</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Class & Semester</span>
+                        <span class="meta-val" id="meta-class-sem">SY B Tech • Sem Odd</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Academic Year</span>
+                        <span class="meta-val" id="meta-academic-year">2026-2027</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Course Coordinator</span>
+                        <span class="meta-val" id="meta-coordinator">Dr. Asma A. Shaikh</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Department</span>
+                        <span class="meta-val" id="meta-dept-name">Artificial Intelligence & Data Science</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teacher Review Callout Banner -->
+            <section class="advisory-card">
+                <div class="advisory-content">
+                    <span class="advisory-icon">💡</span>
+                    <div>
+                        <strong>Pedagogical Decision-Support Mode:</strong>
+                        <span> Mappings are freshly generated using Bloom's Revised Taxonomy, competency relevance, and semantic analysis. Borderline mappings are tagged with <span class="badge-mini-review">⚠️ Review Suggested</span> for coordinator review. You can edit any cell directly and save changes permanently.</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Toolbar / Controls -->
+            <section class="toolbar-section">
+                <div class="toolbar-left">
+                    <button class="btn btn-magic" id="btn-apply-suggested" onclick="applySuggestions()">
+                        <span class="btn-icon">🪄</span> Recalculate AI Suggestions
+                    </button>
+                    <button class="btn btn-success" id="btn-save-matrix" onclick="saveTeacherMatrix()">
+                        <span class="btn-icon">💾</span> Save Mappings
+                    </button>
+                    <button class="btn btn-outline" id="btn-clear" onclick="clearMatrix()">
+                        <span class="btn-icon">🧹</span> Clear Matrix
+                    </button>
+                </div>
+                <div class="toolbar-right">
+                    <div class="overall-avg-badge">
+                        <span class="o-label">Overall Attainment:</span>
+                        <span class="o-value" id="overall-matrix-avg">--</span>
+                    </div>
+                    <button class="btn btn-primary" id="btn-export-excel" onclick="exportCourseExcel()">
+                        <span class="btn-icon">📥</span> Download Course Excel (.xlsx)
+                    </button>
+                </div>
+            </section>
+
+            <!-- Mapping Matrix Section -->
+            <main class="matrix-card">
+                <div class="card-header-bar">
+                    <div class="matrix-title-group">
+                        <h2>CO–PO & CO–PSO Articulation Matrix</h2>
+                        <span class="nba-badge">NBA Criterion 3 Compliance</span>
+                    </div>
+                    <div class="legend-bar">
+                        <span class="legend-item"><span class="badge-dot dot-none"></span> - (No Relation)</span>
+                        <span class="legend-item"><span class="badge-dot dot-low"></span> 1 (&lt; 50% Low)</span>
+                        <span class="legend-item"><span class="badge-dot dot-med"></span> 2 (50%–80% Moderate)</span>
+                        <span class="legend-item"><span class="badge-dot dot-high"></span> 3 (&gt; 80% High)</span>
+                        <span class="legend-item"><span class="badge-dot dot-warn"></span> ⚠️ Review Suggested</span>
+                    </div>
+                </div>
+
+                <!-- Table Container -->
+                <div class="table-responsive">
+                    <table class="matrix-table" id="matrix-table">
+                        <thead id="matrix-thead">
+                            <!-- Populated dynamically via app.js -->
+                        </thead>
+                        <tbody id="matrix-tbody">
+                            <!-- Populated dynamically via app.js -->
+                        </tbody>
+                        <tfoot>
+                            <tr class="tfoot-row" id="matrix-tfoot">
+                                <!-- Populated dynamically via app.js -->
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <div class="matrix-hint-footer">
+                    <span class="hint-icon">💡</span>
+                    <span>Click any matrix cell or its information icon <strong style="color: var(--primary);">&#9432;</strong> to view the detailed pedagogical explanation, Bloom's level alignment, and match score.</span>
+                </div>
+            </main>
+
+            <!-- Tabbed Reference Documents Section -->
+            <section class="reference-tabs-section">
+                <div class="tabs-nav" id="reference-tabs">
+                    <button class="tab-btn active" onclick="switchTab('tab-justifications')">📋 Justifications & Articulation Matrix</button>
+                    <button class="tab-btn" onclick="switchTab('tab-cos')">🎯 Course Outcomes (COs)</button>
+                    <button class="tab-btn" onclick="switchTab('tab-pos')">🏛️ Program Outcomes (POs)</button>
+                    <button class="tab-btn" onclick="switchTab('tab-psos')">🔬 Program Specific Outcomes (PSOs)</button>
+                    <button class="tab-btn" onclick="switchTab('tab-wks')">🌐 Washington Accord (WKs)</button>
+                    <button class="tab-btn" onclick="switchTab('tab-peos')">🎓 Educational Objectives (PEOs)</button>
+                </div>
+
+                <div class="tab-content-area">
+                    <!-- Tab 1: Justifications -->
+                    <div class="tab-panel active" id="tab-justifications">
+                        <div class="panel-header">
+                            <h3>Pedagogical Justification Matrix & Semantic Match Breakdown</h3>
+                            <p>Detailed justification for every mapping score based on Bloom's action verbs, curricular domain scope, keyword overlap, and TF-IDF semantic similarity.</p>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table" id="justifications-table">
+                                <thead>
+                                    <tr>
+                                        <th>CO</th>
+                                        <th>Target Outcome</th>
+                                        <th>Mapping Level</th>
+                                        <th>Match %</th>
+                                        <th>Strength</th>
+                                        <th>CO Skill / Topic</th>
+                                        <th>Pedagogical Rationale & Factor Breakdown</th>
+                                        <th>Review Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="justifications-tbody">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: CO Statements -->
+                    <div class="tab-panel" id="tab-cos">
+                        <div class="panel-header">
+                            <h3>Defined Course Outcomes for Selected Course</h3>
+                            <p id="cos-panel-subtitle">Course: Data Structures and Algorithms</p>
+                        </div>
+                        <div class="cards-grid" id="cos-cards-container">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: PO Statements -->
+                    <div class="tab-panel" id="tab-pos">
+                        <div class="panel-header">
+                            <h3>Program Outcomes (POs)</h3>
+                            <p>National Board of Accreditation (NBA) Graduate Attributes for Engineering Graduates.</p>
+                        </div>
+                        <div class="cards-grid" id="pos-cards-container">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 4: PSO Statements -->
+                    <div class="tab-panel" id="tab-psos">
+                        <div class="panel-header">
+                            <h3>Program Specific Outcomes (PSOs)</h3>
+                            <p id="psos-panel-subtitle">Official Department Specific Outcomes</p>
+                        </div>
+                        <div class="cards-grid pso-grid" id="psos-cards-container">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 5: WK Statements -->
+                    <div class="tab-panel" id="tab-wks">
+                        <div class="panel-header">
+                            <h3>Washington Accord Knowledge Profiles (WKs)</h3>
+                            <p>Profile of engineering graduates in terms of knowledge and attitude domains.</p>
+                        </div>
+                        <div class="cards-grid" id="wks-cards-container">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Tab 6: PEO Statements -->
+                    <div class="tab-panel" id="tab-peos">
+                        <div class="panel-header">
+                            <h3>Program Educational Objectives (PEOs)</h3>
+                            <p>Long-term career and professional objectives for program graduates.</p>
+                        </div>
+                        <div class="cards-grid" id="peos-cards-container">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Automated Outcome-Based Education (OBE) Curriculum Mapping System &bull; Annasaheb Dange College of Engineering & Technology, Ashta</p>
+            <p class="footer-note">All course exports are safely generated in memory. Source Excel files are strictly preserved.</p>
+        </footer>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- MODAL 1: ADD NEW COURSE MODAL                            -->
+    <!-- ======================================================== -->
+    <div class="modal-backdrop" id="modal-add-course" onclick="closeModalOnBackdrop(event, 'modal-add-course')">
+        <div class="modal-card modal-large" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div>
+                    <h3>Add New Course</h3>
+                    <p class="modal-subtitle" id="modal-add-course-subtitle">Add a new course to the selected department</p>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal('modal-add-course')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Mode Switch Tabs -->
+                <div class="modal-subtabs">
+                    <button class="subtab-btn active" id="btn-tab-manual-course" onclick="switchAddCourseTab('manual')">✍️ Manual Entry Form</button>
+                    <button class="subtab-btn" id="btn-tab-upload-course" onclick="switchAddCourseTab('upload')">📤 Upload Excel (.xlsx)</button>
+                </div>
+
+                <!-- Tab A: Manual Entry Form -->
+                <div id="add-course-panel-manual">
+                    <form id="form-add-course" onsubmit="submitAddCourse(event)">
+                        <div class="form-row-2">
+                            <div class="form-group">
+                                <label for="input-course-name">Course Name *</label>
+                                <input type="text" id="input-course-name" class="form-input" placeholder="e.g. Machine Learning" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="input-course-code">Course Code *</label>
+                                <input type="text" id="input-course-code" class="form-input" placeholder="e.g. 2ADPC 301" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row-3">
+                            <div class="form-group">
+                                <label for="input-coordinator">Course Coordinator *</label>
+                                <input type="text" id="input-coordinator" class="form-input" placeholder="e.g. Prof. R. S. Kulkarni" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="input-class-name">Class</label>
+                                <input type="text" id="input-class-name" class="form-input" value="TY B Tech" placeholder="e.g. TY B Tech">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-semester">Semester</label>
+                                <select id="input-semester" class="form-select">
+                                    <option value="Odd">Odd</option>
+                                    <option value="Even">Even</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-top: 16px;">
+                            <div class="co-header-row">
+                                <label>Course Outcomes (CO Statements) *</label>
+                                <button type="button" class="btn btn-outline-sm" onclick="addCoRow()">+ Add Another CO</button>
+                            </div>
+                            <div id="co-rows-container" class="co-rows-list">
+                                <!-- Pre-populated with 3 starter CO rows -->
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline" onclick="closeModal('modal-add-course')">Cancel</button>
+                            <button type="submit" class="btn btn-primary" id="btn-submit-course">Save Course & Generate Mapping</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tab B: Upload Excel Form -->
+                <div id="add-course-panel-upload" style="display: none;">
+                    <div class="upload-dropzone" id="upload-dropzone">
+                        <span class="upload-icon">📊</span>
+                        <h4>Upload Syllabus / CO Excel Workbook</h4>
+                        <p>Upload a <code>.xlsx</code> file containing defined Course Outcomes (COs).</p>
+                        <input type="file" id="input-course-excel-file" accept=".xlsx,.xlsm" onchange="handleExcelFileSelected(event)" style="display: none;">
+                        <button type="button" class="btn btn-primary" onclick="document.getElementById('input-course-excel-file').click()">
+                            Browse Excel File
+                        </button>
+                        <p class="file-chosen-text" id="file-chosen-name">No file chosen yet</p>
+                    </div>
+
+                    <div id="upload-preview-card" style="display: none; margin-top: 20px;">
+                        <h4 style="margin-bottom: 8px;">Extracted Preview:</h4>
+                        <div id="upload-preview-details" class="preview-box"></div>
+                    </div>
+
+                    <div class="modal-footer" style="margin-top: 24px;">
+                        <button type="button" class="btn btn-outline" onclick="closeModal('modal-add-course')">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="btn-confirm-upload" onclick="submitUploadCourse()" disabled>
+                            Upload & Create Course
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- MODAL 2: ADD NEW DEPARTMENT MODAL                         -->
+    <!-- ======================================================== -->
+    <div class="modal-backdrop" id="modal-add-dept" onclick="closeModalOnBackdrop(event, 'modal-add-dept')">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div>
+                    <h3>Add New Department</h3>
+                    <p class="modal-subtitle">Configure a new department with its isolated PO, PSO, and WK statements</p>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal('modal-add-dept')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="form-add-dept" onsubmit="submitAddDepartment(event)">
+                    <div class="form-group">
+                        <label for="input-dept-name">Department Name *</label>
+                        <input type="text" id="input-dept-name" class="form-input" placeholder="e.g. Department of Mechanical Engineering" required>
+                    </div>
+                    <div class="form-row-2">
+                        <div class="form-group">
+                            <label for="input-dept-short">Short Name / Code *</label>
+                            <input type="text" id="input-dept-short" class="form-input" placeholder="e.g. MECH" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-dept-program">Program Name *</label>
+                            <input type="text" id="input-dept-program" class="form-input" placeholder="e.g. B Tech in Mechanical Engineering" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-dept-pso1">PSO 1 Statement *</label>
+                        <textarea id="input-dept-pso1" class="form-textarea" rows="2" placeholder="e.g. Apply core principles to design and analyze systems..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="input-dept-pso2">PSO 2 Statement *</label>
+                        <textarea id="input-dept-pso2" class="form-textarea" rows="2" placeholder="e.g. Implement modern tools and industrial practices..." required></textarea>
+                    </div>
+                    <p class="form-hint">Note: Standard NBA Program Outcomes (PO1 to PO11) and Washington Accord (WK1 to WK8) will be automatically configured for this department and can be customized at any time.</p>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline" onclick="closeModal('modal-add-dept')">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Create Department</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- MODAL 3: JUSTIFICATION & EVALUATION DETAILS MODAL         -->
+    <!-- ======================================================== -->
+    <div class="modal-backdrop" id="modal-backdrop" onclick="closeModalOnBackdrop(event, 'modal-backdrop')">
+        <div class="modal-card" id="modal-card" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div>
+                    <h3 id="modal-co-po-title">Mapping Justification</h3>
+                    <p class="modal-subtitle" id="modal-subtitle">Explanation</p>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal('modal-backdrop')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-score-row">
+                    <div class="score-group">
+                        <div class="score-pill-large" id="modal-score-badge">High (3)</div>
+                        <div class="match-pct-badge" id="modal-pct-badge">85.0% Match</div>
+                        <span id="modal-review-tag" class="badge-mini-review" style="display:none;">⚠️ Teacher Review Recommended</span>
+                    </div>
+                    <div class="modal-select-wrapper">
+                        <label for="modal-quick-select">Adjust Value:</label>
+                        <select id="modal-quick-select" onchange="modalQuickChange(this.value)">
+                            <option value="-">- (No Relation)</option>
+                            <option value="1">1 (&lt; 50% Low)</option>
+                            <option value="2">2 (50%–80% Moderate)</option>
+                            <option value="3">3 (&gt; 80% High)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Threshold Rule Indicator -->
+                <div class="threshold-callout" id="modal-threshold-rule">
+                    Calculated Match: 85.0% &bull; Rule: &gt; 80.0% &rarr; High Correlation (3)
+                </div>
+
+                <!-- 4 Factor Breakdown -->
+                <div class="factors-section">
+                    <span class="block-label">Evaluation Factor Breakdown:</span>
+                    <div class="factors-grid">
+                        <div class="factor-card">
+                            <span class="factor-name">Domain Relevance (40%)</span>
+                            <span class="factor-val" id="modal-f-domain">94.0%</span>
+                        </div>
+                        <div class="factor-card">
+                            <span class="factor-name">Verb Alignment (25%)</span>
+                            <span class="factor-val" id="modal-f-verb">96.0%</span>
+                        </div>
+                        <div class="factor-card">
+                            <span class="factor-name">Phrase Match (15%)</span>
+                            <span class="factor-val" id="modal-f-phrase">72.0%</span>
+                        </div>
+                        <div class="factor-card">
+                            <span class="factor-name">Semantic Sim (20%)</span>
+                            <span class="factor-val" id="modal-f-semantic">78.5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-info-block">
+                    <span class="block-label">Course Outcome (CO Topic & Skill):</span>
+                    <p id="modal-co-desc" class="block-text"></p>
+                </div>
+                <div class="modal-info-block">
+                    <span class="block-label">Target Outcome (PO / PSO Concept):</span>
+                    <p id="modal-target-desc" class="block-text"></p>
+                </div>
+                <div class="modal-info-block highlight-block">
+                    <span class="block-label">Pedagogical Alignment & Semantic Explanation:</span>
+                    <p id="modal-rationale-desc" class="block-text"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="closeModal('modal-backdrop')">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

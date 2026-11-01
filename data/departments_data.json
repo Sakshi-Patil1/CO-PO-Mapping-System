@@ -1,0 +1,762 @@
+{
+  "departments": {
+    "aids": {
+      "id": "aids",
+      "name": "Department of Artificial Intelligence and Data Science",
+      "short_name": "AI & DS",
+      "institution": "Sant Dnyaneshwar Shikshan Sanstha's Annasaheb Dange College of Engineering and Technology, Ashta",
+      "program": "UG in Artificial Intelligence and Data Science, B Tech (AIDS)",
+      "po_statements": [
+        {
+          "code": "PO1",
+          "title": "Engineering Knowledge",
+          "desc": "Apply knowledge of mathematics, natural science, computing, engineering fundamentals and an engineering specialization as specified in WK1 to WK4, respectively, to develop to the solution of complex engineering problems.",
+          "full_text": "PO1: Engineering Knowledge: Apply knowledge of mathematics, natural science, computing, engineering fundamentals and an engineering specialization as specified in WK1 to WK4, respectively, to develop to the solution of complex engineering problems."
+        },
+        {
+          "code": "PO2",
+          "title": "Problem Analysis",
+          "desc": "Identify, formulate, review research literature and analyze complex engineering problems, reaching substantiated conclusions with consideration for sustainable development. (WK1 to WK4)",
+          "full_text": "PO2: Problem Analysis: Identify, formulate, review research literature and analyze complex engineering problems, reaching substantiated conclusions with consideration for sustainable development. (WK1 to WK4)"
+        },
+        {
+          "code": "PO3",
+          "title": "Design/Development of Solutions",
+          "desc": "Design creative solutions for complex engineering problems and design/develop systems/components/processes to meet identified needs with consideration for public health and safety, whole-life cost, net zero carbon, culture, society and environment as required. (WK5)",
+          "full_text": "PO3: Design/Development of Solutions: Design creative solutions for complex engineering problems and design/develop systems/components/processes to meet identified needs with consideration for public health and safety, whole-life cost, net zero carbon, culture, society and environment as required. (WK5)"
+        },
+        {
+          "code": "PO4",
+          "title": "Conduct Investigations of Complex Problems",
+          "desc": "Conduct investigations of complex engineering problems using research-based knowledge, including design of experiments, modelling, analysis & interpretation of data to provide valid conclusions. (WK8).",
+          "full_text": "PO4: Conduct Investigations of Complex Problems: Conduct investigations of complex engineering problems using research-based knowledge, including design of experiments, modelling, analysis & interpretation of data to provide valid conclusions. (WK8)."
+        },
+        {
+          "code": "PO5",
+          "title": "Engineering Tool Usage",
+          "desc": "Create, select and apply appropriate techniques, resources and modern engineering & IT tools, including prediction and modelling, recognizing their limitations to solve complex engineering problems. (WK2 and WK6)",
+          "full_text": "PO5: Engineering Tool Usage: Create, select and apply appropriate techniques, resources and modern engineering & IT tools, including prediction and modelling, recognizing their limitations to solve complex engineering problems. (WK2 and WK6)"
+        },
+        {
+          "code": "PO6",
+          "title": "The Engineer and The World",
+          "desc": "Analyze and evaluate societal and environmental aspects while solving complex engineering problems for its impact on sustainability with reference to the economy, health, safety, legal framework, culture and environment. (WK1, WK5, and WK7).",
+          "full_text": "PO6: The Engineer and The World: Analyze and evaluate societal and environmental aspects while solving complex engineering problems for its impact on sustainability with reference to the economy, health, safety, legal framework, culture and environment. (WK1, WK5, and WK7)."
+        },
+        {
+          "code": "PO7",
+          "title": "Ethics",
+          "desc": "Apply ethical principles and commit to professional ethics, human values, diversity and inclusion; adhere to national & international laws. (WK9)",
+          "full_text": "PO7: Ethics: Apply ethical principles and commit to professional ethics, human values, diversity and inclusion; adhere to national & international laws. (WK9)"
+        },
+        {
+          "code": "PO8",
+          "title": "Individual and Collaborative Teamwork",
+          "desc": "Function effectively as an individual and as a member or leader in diverse/multidisciplinary teams.",
+          "full_text": "PO8: Individual and Collaborative Teamwork: Function effectively as an individual and as a member or leader in diverse/multidisciplinary teams."
+        },
+        {
+          "code": "PO9",
+          "title": "Communication",
+          "desc": "Communicate effectively and inclusively within the engineering community and society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations considering cultural, language, and learning differences",
+          "full_text": "PO9: Communication: Communicate effectively and inclusively within the engineering community and society at large, such as being able to comprehend and write effective reports and design documentation, make effective presentations considering cultural, language, and learning differences"
+        },
+        {
+          "code": "PO10",
+          "title": "Project Management and Finance",
+          "desc": "Apply knowledge and understanding of engineering management principles and economic decision-making and apply these to one’s own work, as a member and leader in a team, and to manage projects and in multidisciplinary environments.",
+          "full_text": "PO10: Project Management and Finance: Apply knowledge and understanding of engineering management principles and economic decision-making and apply these to one’s own work, as a member and leader in a team, and to manage projects and in multidisciplinary environments."
+        },
+        {
+          "code": "PO11",
+          "title": "Life-Long Learning",
+          "desc": "Recognize the need for, and have the preparation and ability for\ni. independent and life-long learning \nii. adaptability to new and emerging technologies and \niii. critical thinking in the broadest context of technological change. (WK8)",
+          "full_text": "PO11: Life-Long Learning: Recognize the need for, and have the preparation and ability for\ni. independent and life-long learning \nii. adaptability to new and emerging technologies and \niii. critical thinking in the broadest context of technological change. (WK8)"
+        }
+      ],
+      "pso_statements": [
+        {
+          "code": "PSO1",
+          "desc": "Apply foundational and advanced concepts of Artificial Intelligence to analyze, model, and develop intelligent systems that solve complex real-world problems."
+        },
+        {
+          "code": "PSO2",
+          "desc": "Implement Data Science techniques and tools to extract meaningful insights, build predictive models, and support data-driven decision-making across diverse application domains."
+        }
+      ],
+      "wk_statements": [
+        {
+          "code": "WK1",
+          "desc": "A systematic, theory-based understanding of the natural sciences applicable to the discipline and awareness of relevant social sciences."
+        },
+        {
+          "code": "WK2",
+          "desc": "Conceptually-based mathematics, numerical analysis, data analysis, statistics and formal aspects of computer and information science to support detailed analysis and modelling applicable to the discipline."
+        },
+        {
+          "code": "WK3",
+          "desc": "A systematic, theory-based formulation of engineering fundamentals required in the engineering discipline."
+        },
+        {
+          "code": "WK4",
+          "desc": "Engineering specialist knowledge that provides theoretical frameworks and bodies of knowledge for the accepted practice areas in the engineering discipline; much is at the forefront of the discipline."
+        },
+        {
+          "code": "WK5",
+          "desc": "Knowledge, including efficient resource use, environmental impacts, whole-life cost, re-use of resources, net zero carbon, and similar concepts, that supports engineering design and operations in a practice area."
+        },
+        {
+          "code": "WK6",
+          "desc": "Knowledge of engineering practice (technology) in the practice areas in the engineering discipline."
+        },
+        {
+          "code": "WK7",
+          "desc": "Knowledge of the role of engineering in society and identified issues in engineering practice in the discipline, such as the professional responsibility of an engineer for public safety and sustainable development."
+        },
+        {
+          "code": "WK8",
+          "desc": "Engagement with selected knowledge in the current research literature on the discipline, awareness of the power of critical thinking, and creative approaches to evaluate emerging issues."
+        },
+        {
+          "code": "WK9",
+          "desc": "Ethics, inclusive behaviour and conduct. Knowledge of professional ethics, responsibilities, and norms of engineering practice. Awareness of the need for diversity by reason of ethnicity, gender, age, physical ability, etc., with mutual understanding and respect and inclusive attitudes."
+        }
+      ],
+      "peo_statements": [
+        {
+          "code": "PEO1",
+          "desc": "Ability to understand, apply, analyse, design models and applications for all the real- world scenarios related to Artificial Intelligence and Data Science. (PO 1,2,3)"
+        },
+        {
+          "code": "PEO2",
+          "desc": "Practice engineering in a broader aspect and exhibit professional leadership qualities in their field. (PO 4,5,6)"
+        },
+        {
+          "code": "PEO3",
+          "desc": "Enhancing technological competence to withstand the challenges in the volatile IT industry. (PO 7,8,9)"
+        },
+        {
+          "code": "PEO4",
+          "desc": "To be committed in Life-long research and Learning activities that supports societal development. (PO 10,11,12)"
+        }
+      ],
+      "courses": [
+        {
+          "id": "dsa-2adpc202",
+          "course_name": "Data Structures and Algorithms",
+          "course_code": "2ADPC 202",
+          "coordinator": "Dr. Asma A. Shaikh",
+          "class_name": "SY B Tech",
+          "academic_year": "2026-2027",
+          "semester": "Odd",
+          "hod": "Head of Department",
+          "cos": [
+            {
+              "num": "CO1",
+              "code": "2ADPC202_1",
+              "statement": "Explain the fundamental concepts of data structures and algorithms in terms of time and space complexity",
+              "bl": "Level 2 (Understand)"
+            },
+            {
+              "num": "CO2",
+              "code": "2ADPC202_2",
+              "statement": "Implement linear data structures by performing insertion, deletion, searching, and traversal operations.",
+              "bl": "Level 3 (Apply)"
+            },
+            {
+              "num": "CO3",
+              "code": "2ADPC202_3",
+              "statement": "Demonstrate the representation and traversal techniques of non-linear data structures.",
+              "bl": "Level 3 (Apply)"
+            },
+            {
+              "num": "CO4",
+              "code": "2ADPC202_4",
+              "statement": "Apply appropriate searching, sorting, and hashing techniques to solve computational problems and analyze their efficiency.",
+              "bl": "Level 4 (Analyze)"
+            }
+          ],
+          "saved_matrix": {}
+        },
+        {
+          "id": "course-2adpc301",
+          "course_name": "Machine Learning",
+          "course_code": "2ADPC 301",
+          "coordinator": "Prof. R. S. Kulkarni",
+          "class_name": "TY B Tech",
+          "academic_year": "2026-2027",
+          "semester": "Odd",
+          "hod": "Head of Department",
+          "cos": [
+            {
+              "bl": "Level 2 (Understand)",
+              "code": "2ADPC301_1",
+              "num": "CO1",
+              "statement": "Understand core mathematical foundations of supervised learning algorithms."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_2",
+              "num": "CO2",
+              "statement": "Develop and train neural networks using Python and modern deep learning libraries."
+            },
+            {
+              "bl": "Level 4 (Analyze)",
+              "code": "2ADPC301_3",
+              "num": "CO3",
+              "statement": "Analyze and benchmark classification models using cross-validation and evaluation metrics."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_4",
+              "num": "CO4",
+              "statement": "Design ethical AI pipelines adhering to fairness, data privacy, and legal constraints."
+            }
+          ],
+          "saved_matrix": {
+            "CO1": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "2",
+              "PO 2": "2",
+              "PO 3": "1",
+              "PO 4": "-",
+              "PO 5": "1",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "1",
+              "PSO 1": "2",
+              "PSO 2": "1"
+            },
+            "CO2": {
+              "PO 1": "2",
+              "PO 10": "-",
+              "PO 11": "2",
+              "PO 2": "2",
+              "PO 3": "2",
+              "PO 4": "2",
+              "PO 5": "2",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "1",
+              "PSO 1": "2",
+              "PSO 2": "2"
+            },
+            "CO3": {
+              "PO 1": "2",
+              "PO 10": "-",
+              "PO 11": "2",
+              "PO 2": "2",
+              "PO 3": "2",
+              "PO 4": "2",
+              "PO 5": "2",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "1",
+              "PSO 1": "2",
+              "PSO 2": "2"
+            },
+            "CO4": {
+              "PO 1": "2",
+              "PO 10": "-",
+              "PO 11": "2",
+              "PO 2": "2",
+              "PO 3": "2",
+              "PO 4": "2",
+              "PO 5": "2",
+              "PO 6": "2",
+              "PO 7": "2",
+              "PO 8": "-",
+              "PO 9": "1",
+              "PSO 1": "2",
+              "PSO 2": "2"
+            }
+          }
+        },
+        {
+          "id": "course-2adpc301-1",
+          "course_name": "Machine Learning",
+          "course_code": "2ADPC 301",
+          "coordinator": "Prof. R. S. Kulkarni",
+          "class_name": "TY B Tech",
+          "academic_year": "2026-2027",
+          "semester": "Odd",
+          "hod": "Head of Department",
+          "cos": [
+            {
+              "bl": "Level 2 (Understand)",
+              "code": "2ADPC301_1",
+              "num": "CO1",
+              "statement": "Understand core mathematical foundations of supervised learning algorithms."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_2",
+              "num": "CO2",
+              "statement": "Develop and train neural networks using Python and modern deep learning libraries."
+            },
+            {
+              "bl": "Level 4 (Analyze)",
+              "code": "2ADPC301_3",
+              "num": "CO3",
+              "statement": "Analyze and benchmark classification models using cross-validation and evaluation metrics."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_4",
+              "num": "CO4",
+              "statement": "Design ethical AI pipelines adhering to fairness, data privacy, and legal constraints."
+            }
+          ],
+          "saved_matrix": {
+            "CO1": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "2",
+              "PO 2": "2",
+              "PO 3": "1",
+              "PO 4": "-",
+              "PO 5": "1",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "1",
+              "PSO 1": "2",
+              "PSO 2": "1"
+            },
+            "CO2": {
+              "PO 1": "2",
+              "PO 10": "-",
+              "PO 11": "2",
+              "PO 2": "2",
+              "PO 3": "2",
+              "PO 4": "2",
+              "PO 5": "2",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "1",
+              "PSO 1": "2",
+              "PSO 2": "2"
+            },
+            "CO3": {
+              "PO 1": "2",
+              "PO 10": "-",
+              "PO 11": "2",
+              "PO 2": "2",
+              "PO 3": "2",
+              "PO 4": "2",
+              "PO 5": "2",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "1",
+              "PSO 1": "2",
+              "PSO 2": "2"
+            },
+            "CO4": {
+              "PO 1": "2",
+              "PO 10": "-",
+              "PO 11": "2",
+              "PO 2": "2",
+              "PO 3": "2",
+              "PO 4": "2",
+              "PO 5": "2",
+              "PO 6": "2",
+              "PO 7": "2",
+              "PO 8": "-",
+              "PO 9": "1",
+              "PSO 1": "2",
+              "PSO 2": "2"
+            }
+          }
+        },
+        {
+          "id": "course-2adpc301-2",
+          "course_name": "Machine Learning",
+          "course_code": "2ADPC 301",
+          "coordinator": "Prof. R. S. Kulkarni",
+          "class_name": "TY B Tech",
+          "academic_year": "2026-2027",
+          "semester": "Odd",
+          "hod": "Head of Department",
+          "cos": [
+            {
+              "bl": "Level 2 (Understand)",
+              "code": "2ADPC301_1",
+              "num": "CO1",
+              "statement": "Understand core mathematical foundations of supervised learning algorithms."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_2",
+              "num": "CO2",
+              "statement": "Develop and train neural networks using Python and modern deep learning libraries."
+            },
+            {
+              "bl": "Level 4 (Analyze)",
+              "code": "2ADPC301_3",
+              "num": "CO3",
+              "statement": "Analyze and benchmark classification models using cross-validation and evaluation metrics."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_4",
+              "num": "CO4",
+              "statement": "Design ethical AI pipelines adhering to fairness, data privacy, and legal constraints."
+            }
+          ],
+          "saved_matrix": {
+            "CO1": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "-",
+              "PO 3": "-",
+              "PO 4": "-",
+              "PO 5": "-",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "2",
+              "PSO 2": "2"
+            },
+            "CO2": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "3",
+              "PO 3": "3",
+              "PO 4": "-",
+              "PO 5": "3",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "3",
+              "PSO 2": "3"
+            },
+            "CO3": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "3",
+              "PO 3": "-",
+              "PO 4": "3",
+              "PO 5": "-",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "3",
+              "PSO 2": "3"
+            },
+            "CO4": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "3",
+              "PO 3": "3",
+              "PO 4": "-",
+              "PO 5": "-",
+              "PO 6": "3",
+              "PO 7": "3",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "3",
+              "PSO 2": "3"
+            }
+          }
+        },
+        {
+          "id": "course-2adpc301-3",
+          "course_name": "Machine Learning",
+          "course_code": "2ADPC 301",
+          "coordinator": "Prof. R. S. Kulkarni",
+          "class_name": "TY B Tech",
+          "academic_year": "2026-2027",
+          "semester": "Odd",
+          "hod": "Head of Department",
+          "cos": [
+            {
+              "bl": "Level 2 (Understand)",
+              "code": "2ADPC301_1",
+              "num": "CO1",
+              "statement": "Understand core mathematical foundations of supervised learning algorithms."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_2",
+              "num": "CO2",
+              "statement": "Develop and train neural networks using Python and modern deep learning libraries."
+            },
+            {
+              "bl": "Level 4 (Analyze)",
+              "code": "2ADPC301_3",
+              "num": "CO3",
+              "statement": "Analyze and benchmark classification models using cross-validation and evaluation metrics."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_4",
+              "num": "CO4",
+              "statement": "Design ethical AI pipelines adhering to fairness, data privacy, and legal constraints."
+            }
+          ],
+          "saved_matrix": {
+            "CO1": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "-",
+              "PO 3": "-",
+              "PO 4": "-",
+              "PO 5": "-",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "2",
+              "PSO 2": "2"
+            },
+            "CO2": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "3",
+              "PO 3": "3",
+              "PO 4": "-",
+              "PO 5": "3",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "3",
+              "PSO 2": "3"
+            },
+            "CO3": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "3",
+              "PO 3": "-",
+              "PO 4": "3",
+              "PO 5": "-",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "3",
+              "PSO 2": "3"
+            },
+            "CO4": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "3",
+              "PO 3": "3",
+              "PO 4": "-",
+              "PO 5": "-",
+              "PO 6": "3",
+              "PO 7": "3",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "3",
+              "PSO 2": "3"
+            }
+          }
+        },
+        {
+          "id": "course-2adpc301-4",
+          "course_name": "Machine Learning",
+          "course_code": "2ADPC 301",
+          "coordinator": "Prof. R. S. Kulkarni",
+          "class_name": "TY B Tech",
+          "academic_year": "2026-2027",
+          "semester": "Odd",
+          "hod": "Head of Department",
+          "cos": [
+            {
+              "bl": "Level 2 (Understand)",
+              "code": "2ADPC301_1",
+              "num": "CO1",
+              "statement": "Understand core mathematical foundations of supervised learning algorithms."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_2",
+              "num": "CO2",
+              "statement": "Develop and train neural networks using Python and modern deep learning libraries."
+            },
+            {
+              "bl": "Level 4 (Analyze)",
+              "code": "2ADPC301_3",
+              "num": "CO3",
+              "statement": "Analyze and benchmark classification models using cross-validation and evaluation metrics."
+            },
+            {
+              "bl": "Level 6 (Create)",
+              "code": "2ADPC301_4",
+              "num": "CO4",
+              "statement": "Design ethical AI pipelines adhering to fairness, data privacy, and legal constraints."
+            }
+          ],
+          "saved_matrix": {
+            "CO1": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "-",
+              "PO 3": "-",
+              "PO 4": "-",
+              "PO 5": "-",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "2",
+              "PSO 2": "2"
+            },
+            "CO2": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "3",
+              "PO 3": "3",
+              "PO 4": "-",
+              "PO 5": "3",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "3",
+              "PSO 2": "3"
+            },
+            "CO3": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "3",
+              "PO 3": "-",
+              "PO 4": "3",
+              "PO 5": "-",
+              "PO 6": "-",
+              "PO 7": "-",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "3",
+              "PSO 2": "3"
+            },
+            "CO4": {
+              "PO 1": "3",
+              "PO 10": "-",
+              "PO 11": "-",
+              "PO 2": "3",
+              "PO 3": "3",
+              "PO 4": "-",
+              "PO 5": "-",
+              "PO 6": "3",
+              "PO 7": "3",
+              "PO 8": "-",
+              "PO 9": "-",
+              "PSO 1": "3",
+              "PSO 2": "3"
+            }
+          }
+        }
+      ]
+    },
+    "mech": {
+      "id": "mech",
+      "name": "Department of Mechanical Engineering",
+      "short_name": "MECH",
+      "institution": "Annasaheb Dange College of Engineering and Technology, Ashta",
+      "program": "UG in Mechanical Engineering, B Tech (MECH)",
+      "po_statements": [
+        {
+          "code": "PO1",
+          "title": "Engineering Knowledge",
+          "desc": "Apply knowledge of mathematics, natural science, computing, engineering fundamentals and an engineering specialization to develop solutions to complex engineering problems.",
+          "full_text": "PO1: Engineering Knowledge: Apply knowledge of mathematics, natural science, computing, engineering fundamentals and an engineering specialization to develop solutions to complex engineering problems."
+        },
+        {
+          "code": "PO2",
+          "title": "Problem Analysis",
+          "desc": "Identify, formulate, review research literature and analyze complex engineering problems reaching substantiated conclusions.",
+          "full_text": "PO2: Problem Analysis: Identify, formulate, review research literature and analyze complex engineering problems reaching substantiated conclusions."
+        },
+        {
+          "code": "PO3",
+          "title": "Design/Development of Solutions",
+          "desc": "Design creative solutions for complex engineering problems and design systems/components/processes to meet identified needs.",
+          "full_text": "PO3: Design/Development of Solutions: Design creative solutions for complex engineering problems and design systems/components/processes to meet identified needs."
+        },
+        {
+          "code": "PO4",
+          "title": "Conduct Investigations",
+          "desc": "Conduct investigations of complex engineering problems using research-based knowledge and design of experiments.",
+          "full_text": "PO4: Conduct Investigations: Conduct investigations of complex engineering problems using research-based knowledge and design of experiments."
+        },
+        {
+          "code": "PO5",
+          "title": "Modern Tool Usage",
+          "desc": "Create, select and apply appropriate techniques, resources and modern engineering & IT tools.",
+          "full_text": "PO5: Modern Tool Usage: Create, select and apply appropriate techniques, resources and modern engineering & IT tools."
+        },
+        {
+          "code": "PO6",
+          "title": "The Engineer and Society",
+          "desc": "Analyze and evaluate societal and environmental aspects while solving complex engineering problems.",
+          "full_text": "PO6: The Engineer and Society: Analyze and evaluate societal and environmental aspects while solving complex engineering problems."
+        },
+        {
+          "code": "PO7",
+          "title": "Ethics",
+          "desc": "Apply ethical principles and commit to professional ethics, human values, and norms of engineering practice.",
+          "full_text": "PO7: Ethics: Apply ethical principles and commit to professional ethics, human values, and norms of engineering practice."
+        },
+        {
+          "code": "PO8",
+          "title": "Individual and Collaborative Teamwork",
+          "desc": "Function effectively as an individual, and as a member or leader in diverse and multidisciplinary teams.",
+          "full_text": "PO8: Individual and Collaborative Teamwork: Function effectively as an individual, and as a member or leader in diverse and multidisciplinary teams."
+        },
+        {
+          "code": "PO9",
+          "title": "Communication",
+          "desc": "Communicate effectively on complex engineering activities with the engineering community and society.",
+          "full_text": "PO9: Communication: Communicate effectively on complex engineering activities with the engineering community and society."
+        },
+        {
+          "code": "PO10",
+          "title": "Project Management and Finance",
+          "desc": "Demonstrate knowledge and understanding of engineering and management principles.",
+          "full_text": "PO10: Project Management and Finance: Demonstrate knowledge and understanding of engineering and management principles."
+        },
+        {
+          "code": "PO11",
+          "title": "Life-Long Learning",
+          "desc": "Recognize the need for, and have the preparation and ability to engage in independent and life-long learning.",
+          "full_text": "PO11: Life-Long Learning: Recognize the need for, and have the preparation and ability to engage in independent and life-long learning."
+        }
+      ],
+      "pso_statements": [
+        {
+          "code": "PSO1",
+          "desc": "Apply principles of mechanics, thermal systems, and design to engineering problems."
+        },
+        {
+          "code": "PSO2",
+          "desc": "Utilize modern CAD/CAM/CAE tools to model and manufacture mechanical systems."
+        }
+      ],
+      "wk_statements": [],
+      "peo_statements": [],
+      "courses": []
+    }
+  }
+}
